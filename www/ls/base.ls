@@ -20,9 +20,10 @@ container = d3.select ig.containers.base
         | 2 => "budou <b>dva</b> pátky třináctého"
         | 3 => "budou <b>tři</b> pátky třináctého"
       txt += ": "
-      if it.fridayMonths.length > 1
-        lastMonth = it.fridayMonths.pop!
-      txt += "v&nbsp;<b>#{it.fridayMonths.join '</b>, v&nbsp;<b>' }</b>"
+      fm = it.fridayMonths.slice!
+      if fm.length > 1
+        lastMonth = fm.pop!
+      txt += "v&nbsp;<b>#{fm.join '</b>, v&nbsp;<b>' }</b>"
       if lastMonth
         txt += " a&nbsp;v&nbsp;<b>#{lastMonth}</b>"
       txt
